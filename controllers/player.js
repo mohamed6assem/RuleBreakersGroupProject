@@ -12,8 +12,8 @@ module.exports.playerList = function(req, res, next) {
         else
         {
             res.render('players/list', {
-                title: 'Cars List', 
-                CarsList: playersList,
+                title: 'Players List', 
+                PlayersList: playersList,
                 userName: req.user ? req.user.username : ''
             })            
         }
@@ -49,7 +49,7 @@ module.exports.displayAddPage = (req, res, next) => {
     let newPlayer = PlayerModel();
     
     res.render('players/add_edit', {
-        title: 'Add a New Car',
+        title: 'Add a New Player',
         player: newPlayer,
         userName: req.user ? req.user.username : ''
     });
@@ -61,14 +61,9 @@ module.exports.processAddPage = (req, res, next) => {
 
     let newPlayer = PlayerModel({
         //_id: req.body.id,
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        kilometers: req.body.kilometers,
-        doors: req.body.doors,
-        seats: req.body.seats,
-        color: req.body.color,
-        price: req.body.price  
+        name: req.body.name,
+        phone: req.body.phone,
+        team: req.body.team,
 
     });
 //shows error and redirects user to player list if there is no error
@@ -112,20 +107,15 @@ module.exports.processEditPage = (req, res, next) => {
     
     let id = req.params.id;
 
-    let updatedCar = PlayerModel({
+    let updatedPlayer = PlayerModel({
         _id: req.body.id,
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        kilometers: req.body.kilometers,
-        doors: req.body.doors,
-        seats: req.body.seats,
-        color: req.body.color,
-        price: req.body.price  
+        name: req.body.name,
+        phone: req.body.phone,
+        team: req.body.team,
 
     });
 
-    PlayerModel.updateOne({_id: id}, updatedCar, (err)=>{
+    PlayerModel.updateOne({_id: id}, updatedPlayer, (err)=>{
     if(err){
         console.log(err);
         res.end(err);

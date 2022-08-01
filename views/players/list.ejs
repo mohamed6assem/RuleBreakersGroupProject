@@ -6,12 +6,10 @@
         <h1><%= title %></h1>
         <br>
         <div>
-            <!-- ------------------------ -->
-            <!-- Fixed the ADD button below -->
-            <!-- Add button now navigates to add_edit view -->
+   
             <a href="/players/add" class="btn btn-primary align-self-end" role="button">
                 <i class="fas fa-plus-circle"></i> 
-                Add a new Car
+                Add a new Player
             </a>                
         </div>
         <br>
@@ -19,45 +17,31 @@
             <table class="table table-bordered table-striped table-hover">
                 <!-- Header Row-->
                 <tr>
-                    <th class="text-center">Make</th>
-                    <th class="text-center">Model</th>
-                    <th class="text-center">Year</th>
-                    <th class="text-center">kilometers</th>
-                    <th class="text-center">Doors</th>
-                    <th class="text-center">Seats</th>
-                    <th class="text-center">Color</th>
-                    <th class="text-center">Price</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Phone Number</th>
+                    <th class="text-center">Team</th>
                     <th class="text-center" colspan="3">Actions</th>
                 </tr>
 
                 <!-- Repeatable Template Row -->
 
-                <% for(let i = 0; i < CarsList.length; i++) { %>
+                <% for(let i = 0; i < PlayersList.length; i++) { %>
                     <tr>
-                        <td class="text-center"><%= CarsList[i].make %></td>
-                        <td class="text-center"><%= CarsList[i].model %></td>
-                        <td class="text-center"><%= CarsList[i].year %></td>
-                        <td class="text-center"><%= CarsList[i].kilometers %></td>
-                        <td class="text-center"><%= CarsList[i].doors %></td>
-                        <td class="text-center"><%= CarsList[i].seats %></td>
-                        <td class="text-center"><%= CarsList[i].color %></td>
-                        <td class="text-center"><%= CarsList[i].price %></td>                        
+                        <td class="text-center"><%= PlayersList[i].name %></td>
+                        <td class="text-center"><%= PlayersList[i].phone %></td>
+                        <td class="text-center"><%= PlayersList[i].team %></td>                     
                         <td class="text-center">
-                            <a href="/players/details/<%= CarsList[i]._id %>" class="btn btn-success btn-sm"> 
+                            <a href="/players/details/<%= PlayersList[i]._id %>" class="btn btn-success btn-sm"> 
                             <i class="fas fa-info"></i> </a>
                         </td>
                         <td class="text-center">
-                            <!-- ------------------------- -->
-                            <!-- Fixed the EDIT button below -->
-                            <!-- Edit button now navigates to  -->
-                            <a href="/players/edit/<%=CarsList[i]._id %> " class="btn btn-primary btn-sm">
+                           
+                            <a href="/players/edit/<%=PlayersList[i]._id %> " class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i></a>
                         </td>
                         <td class="text-center">
-                            <!-- --------------------------- -->
-                            <!-- Fix the DELETE button below -->
-                            <!-- --------------------------- -->
-                            <a href="/players/delete/<%=CarsList[i]._id %>" class="btn btn-danger btn-sm">
+                          
+                            <a href="/players/delete/<%=PlayersList[i]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>

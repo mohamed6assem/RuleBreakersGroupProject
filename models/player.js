@@ -5,7 +5,6 @@ let mongoose = require('mongoose');
 let playerModel = mongoose.Schema(
     {
         name: String,
-        age: Number,
         phone: String,
         team: String       
     },
