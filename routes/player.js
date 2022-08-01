@@ -5,7 +5,7 @@ let playerController = require('../controllers/player');
 
 //Connect to players model
 
-let Car = require('../models/player');
+let Player = require('../models/player');
 
 // Helper function for guard purposes
 function requireAuth(req, res, next)

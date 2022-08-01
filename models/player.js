@@ -1,12 +1,13 @@
 // Import
 let mongoose = require('mongoose');
+const Team = require('./team');
 
 // Create a model class
 let playerModel = mongoose.Schema(
     {
         name: String,
         phone: String,
-        team: String       
+        team: Team       
     },
     {
         collection: "players"

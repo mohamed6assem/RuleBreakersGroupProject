@@ -4,7 +4,8 @@ const player = require('./player');
 // Create a model class
 let teamModel = mongoose.Schema(
     {
-        captain: player,
+        name: String,
+        //captain: player,
         player1: player,
         player2: player,  
         player3: player,   
@@ -13,7 +14,8 @@ let teamModel = mongoose.Schema(
         player6: player,
         player7: player,  
         player8: player,   
-        player9: player, 
+        player9: player,
+        player10: player 
     },
     {
         collection: "teams"

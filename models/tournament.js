@@ -6,6 +6,9 @@ const match = require('./match');
 // Create a model class
 let tournamentModel = mongoose.Schema(
     {
+        name: String,
+        description: String,
+        active: Boolean,
         team1: team,
         team2: team,
         team3: team,

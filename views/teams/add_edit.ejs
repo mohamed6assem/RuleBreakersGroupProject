@@ -1,0 +1,42 @@
+<%- include ../partials/header.ejs %>
+
+<!-- Content for the Add_Edit page -->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <input type="hidden"
+                        name="id"
+                        value="<%= team._id %>"
+                    >
+                    <label for="nameTextField">Name</label>
+                    <input type="text" class="form-control"
+                        id="playerNameTextField"
+                        placeholder="Enter the Team Name"
+                        name="name" 
+                        value="<%= team.name %>"
+                        required>
+                </div>
+                
+               
+                <br/>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> 
+                    Submit
+                </button>
+                
+                <a href="/players/list" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> 
+                    Cancel
+                </a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<%- include ../partials/footer.ejs %>

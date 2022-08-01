@@ -42,7 +42,8 @@
                 <li><a class="dropdown-item" href="/players/list"><i class="fa fa-list"></i> Players List</a></li>
                 <li><a class="dropdown-item" href="/players/add"><i class="fas fa-plus-circle"></i> Add a new Player</a></li>
               </ul>
-            </li>            
+            </li>   
+                   
             <li class="nav-item">  
               <% if (typeof userName == 'string' && userName) { %>
                 <a class="nav-link" href="/users/signout" onclick="return confirm('Are you sure?')"><i class="fa fa-door-open"></i> Sign-Out (<%= userName %>)</a>
