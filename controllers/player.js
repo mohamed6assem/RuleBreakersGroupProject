@@ -1,9 +1,9 @@
 // create a reference to the model
-let CarModel = require('../models/player');
+let PlayerModel = require('../models/player');
 
 // Gets all players from the Database and renders the page to list them all.
 module.exports.playerList = function(req, res, next) {  
-    CarModel.find((err, playersList) => {
+    PlayerModel.find((err, playersList) => {
         //console.log(playerList);
         if(err)
         {
@@ -26,7 +26,7 @@ module.exports.details = (req, res, next) => {
     
     let id = req.params.id;
 
-    CarModel.findById(id, (err, playerToShow) => {
+    PlayerModel.findById(id, (err, playerToShow) => {
         if(err)
         {
             console.log(err);
@@ -36,7 +36,7 @@ module.exports.details = (req, res, next) => {
         {
             //show the edit view
             res.render('players/details', {
-                title: 'Car Details', 
+                title: 'Player Details', 
                 player: playerToShow
             })
         }
@@ -46,11 +46,11 @@ module.exports.details = (req, res, next) => {
 // Renders the Add form using the add_edit.ejs template
 module.exports.displayAddPage = (req, res, next) => {
     
-    let newCar = CarModel();
+    let newPlayer = PlayerModel();
     
     res.render('players/add_edit', {
         title: 'Add a New Car',
-        player: newCar,
+        player: newPlayer,
         userName: req.user ? req.user.username : ''
     });
 
@@ -59,7 +59,7 @@ module.exports.displayAddPage = (req, res, next) => {
 // Processes the data submitted from the Add form to create a new player
 module.exports.processAddPage = (req, res, next) => {
 
-    let newCar = CarModel({
+    let newPlayer = PlayerModel({
         //_id: req.body.id,
         make: req.body.make,
         model: req.body.model,
@@ -72,7 +72,7 @@ module.exports.processAddPage = (req, res, next) => {
 
     });
 //shows error and redirects user to player list if there is no error
-    CarModel.create(newCar, (err, player)=>{
+    PlayerModel.create(newPlayer, (err, player)=>{
     if(err){
         console.log(err);
         res.end(err);
@@ -90,14 +90,14 @@ module.exports.displayEditPage = (req, res, next) => {
     
     let id = req.params.id;
 
-    CarModel.findById(id, (err, playerToEdit) => {
+    PlayerModel.findById(id, (err, playerToEdit) => {
         if(err){
             console.log(err);
             res.end(err);
         }
         else{
             res.render('players/add_edit', {
-               title: 'Edit Car',
+               title: 'Edit Player',
                player: playerToEdit,
                userName: req.user ? req.user.username : '' 
             })
@@ -112,7 +112,7 @@ module.exports.processEditPage = (req, res, next) => {
     
     let id = req.params.id;
 
-    let updatedCar = CarModel({
+    let updatedCar = PlayerModel({
         _id: req.body.id,
         make: req.body.make,
         model: req.body.model,
@@ -125,7 +125,7 @@ module.exports.processEditPage = (req, res, next) => {
 
     });
 
-    CarModel.updateOne({_id: id}, updatedCar, (err)=>{
+    PlayerModel.updateOne({_id: id}, updatedCar, (err)=>{
     if(err){
         console.log(err);
         res.end(err);
@@ -143,7 +143,7 @@ module.exports.performDelete = (req, res, next) => {
     
     let id = req.params.id;
 
-    CarModel.remove({_id: id}, (err)=>{
+    PlayerModel.remove({_id: id}, (err)=>{
         if(err){
             console.log(err);
             res.end(err);
