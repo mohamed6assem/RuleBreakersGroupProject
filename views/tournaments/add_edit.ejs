@@ -10,36 +10,36 @@
                 <div class="form-group">
                     <input type="hidden"
                         name="id"
-                        value="<%= player._id %>"
+                        value="<%= tournament._id %>"
                     >
                     <label for="nameTextField">Name</label>
                     <input type="text" class="form-control"
-                        id="playerNameTextField"
-                        placeholder="Enter the Player Name"
+                        id="tournamentNameTextField"
+                        placeholder="Enter the Tournament Name"
                         name="name" 
-                        value="<%= player.name %>"
+                        value="<%= tournament.name %>"
                         required>
                 </div>
                 
                 <div class="form-group">
-                    <label for="phoneTextField">Phone</label>
+                    <label for="descriptionTextField">Description</label>
                     <input type="text"
                     class="form-control"
-                    id="phoneTextField"
-                    placeholder="(647)542-1234"
-                    name="phone" 
-                    value="<%= player.phone %>"
+                    id="descriptionTextField"
+                    placeholder="Enter a short description of the tournament. e.g. 1-on-1 Basketball Tournament"
+                    name="description" 
+                    value="<%= tournament.description %>"
                     required>
                 </div>
 
                 <div class="form-group">
-                    <label for="teamTextField">Team</label>
+                    <label for="teamTextField">Status</label>
                     <input type="text"
                     class="form-control"
-                    id="playerTeamTextField"
-                    placeholder="Enter the name of the player's team"
-                    name="team" 
-                    value="<%= player.team %>"
+                    id="tournamentStatusTextField"
+                    placeholder="Enter the Status of the Tournament"
+                    name="status" 
+                    value="<%= tournament.status %>"
                     required>
                 </div>
 
@@ -49,7 +49,7 @@
                     Submit
                 </button>
                 
-                <a href="/players/list" class="btn btn-warning">
+                <a href="/tournaments/list" class="btn btn-warning">
                     <i class="fas fa-undo"></i> 
                     Cancel
                 </a>
