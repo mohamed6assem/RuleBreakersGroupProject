@@ -6,6 +6,7 @@ const match = require('./match');
 // Create a model class
 let tournamentModel = mongoose.Schema(
     {
+<<<<<<< HEAD
         name: String,
         description: String,
         active: Boolean,
@@ -41,6 +42,16 @@ let tournamentModel = mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: "Team"
         },
+=======
+        team1: team,
+        team2: team,
+        team3: team,
+        team4: team,
+        team5: team,
+        team6: team,
+        team7: team,
+        team8: team,
+>>>>>>> parent of cd2cdc3 (website crashed still fixing to add tournaments teams and players)
         
         quarterfinal1: {
             type: mongoose.Schema.Types.ObjectId,
