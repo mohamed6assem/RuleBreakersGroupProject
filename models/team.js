@@ -1,4 +1,5 @@
 // Import
+//delete this model
 let mongoose = require('mongoose');
 const player = require('./player');
 // Create a model class
