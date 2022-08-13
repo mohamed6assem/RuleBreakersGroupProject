@@ -28,8 +28,8 @@
                 <% for(let i = 0; i < TournamentsList.length; i++) { %>
                     <tr>
                         <td class="text-center"><%= TournamentsList[i].name %></td>
-                        <td class="text-center"><%= TournamentsList[i].phone %></td>
-                        <td class="text-center"><%= TournamentsList[i].team %></td>                     
+                        <td class="text-center"><%= TournamentsList[i].status %></td>
+                        <td class="text-center"><%= TournamentsList[i].description %></td>                     
                         <td class="text-center">
                             <a href="/Tournaments/details/<%= TournamentsList[i]._id %>" class="btn btn-success btn-sm"> 
                             <i class="fas fa-info"></i> </a>
