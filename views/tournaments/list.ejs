@@ -7,9 +7,9 @@
         <br>
         <div>
    
-            <a href="/players/add" class="btn btn-primary align-self-end" role="button">
+            <a href="/Tournaments/add" class="btn btn-primary align-self-end" role="button">
                 <i class="fas fa-plus-circle"></i> 
-                Add a new Player
+                Add a new Tournament
             </a>                
         </div>
         <br>
@@ -25,23 +25,23 @@
 
                 <!-- Repeatable Template Row -->
 
-                <% for(let i = 0; i < PlayersList.length; i++) { %>
+                <% for(let i = 0; i < TournamentsList.length; i++) { %>
                     <tr>
-                        <td class="text-center"><%= PlayersList[i].name %></td>
-                        <td class="text-center"><%= PlayersList[i].phone %></td>
-                        <td class="text-center"><%= PlayersList[i].team %></td>                     
+                        <td class="text-center"><%= TournamentsList[i].name %></td>
+                        <td class="text-center"><%= TournamentsList[i].phone %></td>
+                        <td class="text-center"><%= TournamentsList[i].team %></td>                     
                         <td class="text-center">
-                            <a href="/players/details/<%= PlayersList[i]._id %>" class="btn btn-success btn-sm"> 
+                            <a href="/Tournaments/details/<%= TournamentsList[i]._id %>" class="btn btn-success btn-sm"> 
                             <i class="fas fa-info"></i> </a>
                         </td>
                         <td class="text-center">
                            
-                            <a href="/players/edit/<%=PlayersList[i]._id %> " class="btn btn-primary btn-sm">
+                            <a href="/Tournaments/edit/<%=TournamentsList[i]._id %> " class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i></a>
                         </td>
                         <td class="text-center">
                           
-                            <a href="/players/delete/<%=PlayersList[i]._id %>" class="btn btn-danger btn-sm">
+                            <a href="/Tournaments/delete/<%=TournamentsList[i]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i></a>
                         </td>
                     </tr>

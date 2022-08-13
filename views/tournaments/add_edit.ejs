@@ -12,7 +12,7 @@
                         name="id"
                         value="<%= tournament._id %>"
                     >
-                    <label for="nameTextField">Name</label>
+                    <label for="tournamentNameTextField">Name</label>
                     <input type="text" class="form-control"
                         id="tournamentNameTextField"
                         placeholder="Enter the Tournament Name"
@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="teamTextField">Status</label>
+                    <label for="tournamentStatusTextField">Status</label>
                     <input type="text"
                     class="form-control"
                     id="tournamentStatusTextField"
@@ -41,6 +41,28 @@
                     name="status" 
                     value="<%= tournament.status %>"
                     required>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Match 1</legend>
+                    <label for="player1TextField">Player 1</label>
+                    <input type="text"
+                    class="form-control"
+                    id="player1TextField"
+                    placeholder="Enter the Name of Player 1"
+                    name="player1" 
+                    value="<%= tournament.player1 %>">
+                    <input type="text"
+                    class="form-control"
+                    id="player2TextField"
+                    placeholder="Enter the Name of Player 2"
+                    name="player2" 
+                    value="<%= tournament.player2 %>">
+                </fieldset>
+                <select class="form-control" id="match1WinnerSelect" name="winner1">
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
                 </div>
 
                 <br/>

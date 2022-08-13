@@ -10,39 +10,39 @@ let tournamentModel = mongoose.Schema(
         match1: {
             player1: String,
             player2: String,
-            winner: Number
+            winner1: Number
         },
         match2: {
             player3: String,
             player4: String,
-            winner: Number
+            winner2: Number
         },
         match3: {
             player5: String,
             player6: String,
-            winner: Number
+            winner3: Number
         },
         match4: {
             player7: String,
             player8: String,
-            winner: Number
+            winner4: Number
         },
         
         semifinal1: {
             semiplayer1: String,
             semiplayer2: String,
-            winner: Number
+            winnersf1: Number
         },
         semifinal2: {
             semiplayer3: String,
             semiplayer4: String,
-            winner: Number
+            winnersf2: Number
         },
 
         final: {
             finalplayer1: String,
             finalplayer2: String,
-            winner: Number
+            winnerfinal: Number
         },
 
         owner: {

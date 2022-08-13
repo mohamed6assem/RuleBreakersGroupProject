@@ -21,7 +21,7 @@ app.use(session({
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let playersRouter = require('../routes/tournament');
+let tournamentsRouter = require('../routes/tournament');
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));
@@ -42,7 +42,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/players', playersRouter);
+app.use('/tournament', tournamentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

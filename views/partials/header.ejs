@@ -33,14 +33,14 @@
             </li>
              
             <li class="nav-item dropdown">
-              <% if (title == "Players List" || title == "Add a new Player") { %>
-                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-player"></i> Players</a>
+              <% if (title == "Tournaments List" || title == "Add a new Tournament") { %>
+                <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-player"></i> Tournaments</a>
               <% } else { %>
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-player"></i> Players</a>
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><i class="fa fa-player"></i> Tournaments</a>
               <% } %>       
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/players/list"><i class="fa fa-list"></i> Players List</a></li>
-                <li><a class="dropdown-item" href="/players/add"><i class="fas fa-plus-circle"></i> Add a new Player</a></li>
+                <li><a class="dropdown-item" href="/tournaments/list"><i class="fa fa-list"></i>Tournaments List</a></li>
+                <li><a class="dropdown-item" href="/tournaments/add"><i class="fas fa-plus-circle"></i> Add a new Tournament</a></li>
               </ul>
             </li>            
             <li class="nav-item">  

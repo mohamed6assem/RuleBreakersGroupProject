@@ -23,7 +23,7 @@ function requireAuth(req, res, next)
 
 /* GET list of items */
 // absence of requireAuth enables people who aren't signed in to access list of tournaments
-router.get('/', tournamentController.tournamentList);
+router.get('/list', tournamentController.tournamentList);
 
 // Route for Details
 // absence of requireAuth enables people who aren't signed in to access details of tournaments

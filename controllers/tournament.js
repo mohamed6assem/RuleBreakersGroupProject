@@ -11,7 +11,7 @@ module.exports.tournamentList = function(req, res, next) {
         }
         else
         {
-            res.render('/', {
+            res.render('tournaments/list', {
                 title: 'Tournaments List', 
                 TournamentsList: tournamentsList,
                 userName: req.user ? req.user.username : ''
@@ -65,41 +65,41 @@ module.exports.processAddPage = (req, res, next) => {
         description: req.body.description,
         status: req.body.status,
         match1: {
-            player1: req.body.match1.player1,
-            player2: req.body.match1.player2,
-            winner: req.body.match1.winner,
+            player1: req.body.player1,
+            player2: req.body.player2,
+            winner1: req.body.winner1,
         },
         match2: {
-            player3: req.body.match2.player3,
-            player4: req.body.match2.player4,
-            winner: req.body.match2.winner,
+            player3: req.body.player3,
+            player4: req.body.player4,
+            winner2: req.body.winner2,
         },
         match3: {
-            player5: req.body.match3.player5,
-            player6: req.body.match3.player6,
-            winner: req.body.match3.winner,
+            player5: req.body.player5,
+            player6: req.body.player6,
+            winner3: req.body.winner3,
         },
         match4: {
-            player7: req.body.match4.player7,
-            player8: req.body.match4.player8,
-            winner: req.body.match4.winner,
+            player7: req.body.player7,
+            player8: req.body.player8,
+            winner4: req.body.winner4,
         },
         
         semifinal1: {
-            semiplayer1: req.body.semifinal1.semiplayer1,
-            semiplayer2: req.body.semifinal1.semiplayer2,
-            winner: req.body.semifinal1.winner,
+            semiplayer1: req.body.semiplayer1,
+            semiplayer2: req.body.semiplayer2,
+            winnersf1: req.body.winnersf1,
         },
         semifinal2: {
-            semiplayer3: req.body.semifinal3.semiplayer3,
-            semiplayer4: req.body.semifinal4.semiplayer4,
-            winner: req.body.semifinal2.winner,
+            semiplayer3: req.body.semiplayer3,
+            semiplayer4: req.body.semiplayer4,
+            winnersf2: req.body.winnersf2,
         },
 
         final: {
-            finalplayer1: req.body.final.finalplayer1,
-            finalplayer2: req.body.final.finalplayer2,
-            winner: req.body.final.winner,
+            finalplayer1: req.body.finalplayer1,
+            finalplayer2: req.body.finalplayer2,
+            winnerfinal: req.body.winnerfinal,
         },
         owner: (req.body.owner == null || req.body.owner == "")? req.payload.id : req.body.owner
     });
@@ -111,7 +111,7 @@ module.exports.processAddPage = (req, res, next) => {
     }
     else{
         console.log(tournament);
-        res.redirect('/');
+        res.redirect('/tournament/list');
     }
 });
 
@@ -149,41 +149,41 @@ module.exports.processEditPage = (req, res, next) => {
         description: req.body.description,
         status: req.body.status,
         match1: {
-            player1: req.body.match1.player1,
-            player2: req.body.match1.player2,
-            winner: req.body.match1.winner,
+            player1: req.body.player1,
+            player2: req.body.player2,
+            winner1: req.body.winner1,
         },
         match2: {
-            player3: req.body.match2.player3,
-            player4: req.body.match2.player4,
-            winner: req.body.match2.winner,
+            player3: req.body.player3,
+            player4: req.body.player4,
+            winner2: req.body.winner2,
         },
         match3: {
-            player5: req.body.match3.player5,
-            player6: req.body.match3.player6,
-            winner: req.body.match3.winner,
+            player5: req.body.player5,
+            player6: req.body.player6,
+            winner3: req.body.winner3,
         },
         match4: {
-            player7: req.body.match4.player7,
-            player8: req.body.match4.player8,
-            winner: req.body.match4.winner,
+            player7: req.body.player7,
+            player8: req.body.player8,
+            winner4: req.body.winner4,
         },
         
         semifinal1: {
-            semiplayer1: req.body.semifinal1.semiplayer1,
-            semiplayer2: req.body.semifinal1.semiplayer2,
-            winner: req.body.semifinal1.winner,
+            semiplayer1: req.body.semiplayer1,
+            semiplayer2: req.body.semiplayer2,
+            winnersf1: req.body.winnersf1,
         },
         semifinal2: {
-            semiplayer3: req.body.semifinal3.semiplayer3,
-            semiplayer4: req.body.semifinal4.semiplayer4,
-            winner: req.body.semifinal2.winner,
+            semiplayer3: req.body.semiplayer3,
+            semiplayer4: req.body.semiplayer4,
+            winnersf2: req.body.winnersf2,
         },
 
         final: {
-            finalplayer1: req.body.final.finalplayer1,
-            finalplayer2: req.body.final.finalplayer2,
-            winner: req.body.final.winner,
+            finalplayer1: req.body.finalplayer1,
+            finalplayer2: req.body.finalplayer2,
+            winnerfinal: req.body.winnerfinal,
         },
         owner: (req.body.owner == null || req.body.owner == "")? req.payload.id : req.body.owner
     });
@@ -195,7 +195,7 @@ module.exports.processEditPage = (req, res, next) => {
     }
     else{
         //console.log(tournament);
-        res.redirect('/');
+        res.redirect('/tournaments/list');
     }
 });
     
@@ -213,7 +213,7 @@ module.exports.performDelete = (req, res, next) => {
         }
         else{
             
-            res.redirect('/');
+            res.redirect('/tournaments/list');
         }
     });
 }
