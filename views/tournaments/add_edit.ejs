@@ -45,24 +45,181 @@
                 <div class="form-group">
                     <fieldset>
                         <legend>Match 1</legend>
-                    <label for="player1TextField">Player 1</label>
+                    
                     <input type="text"
                     class="form-control"
                     id="player1TextField"
                     placeholder="Enter the Name of Player 1"
                     name="player1" 
-                    value="<%= tournament.player1 %>">
+                    value="<%= tournament.player1 %>"
+                    required>
                     <input type="text"
                     class="form-control"
                     id="player2TextField"
                     placeholder="Enter the Name of Player 2"
                     name="player2" 
-                    value="<%= tournament.player2 %>">
-                </fieldset>
-                <select class="form-control" id="match1WinnerSelect" name="winner1">
+                    value="<%= tournament.player2 %>"
+                    required>
+                <label for="match1WinnerSelect">Match 1 Winner</label>
+                <select class="form-control" id="match1WinnerSelect" name="winner1" value="<%= tournament.winner1 %>" required>
                     <option>1</option>
                     <option>2</option>
                   </select>
+                </fieldset>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Match 2</legend>
+                    
+                    <input type="text"
+                    class="form-control"
+                    id="player3TextField"
+                    placeholder="Enter the Name of Player 3"
+                    name="player3" 
+                    value="<%= tournament.player3 %>"
+                    required>
+                    <input type="text"
+                    class="form-control"
+                    id="player4TextField"
+                    placeholder="Enter the Name of Player 4"
+                    name="player4" 
+                    value="<%= tournament.player4 %>"
+                    required>
+                    <label for="match2WinnerSelect">Match 2 Winner</label>
+                <select class="form-control" id="match2WinnerSelect" name="winner2" value="<%= tournament.winner2 %>" required>
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </fieldset>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Match 3</legend>
+                    
+                    <input type="text"
+                    class="form-control"
+                    id="player5TextField"
+                    placeholder="Enter the Name of Player 5"
+                    name="player5" 
+                    value="<%= tournament.player5 %>"
+                    required>
+                    <input type="text"
+                    class="form-control"
+                    id="player6TextField"
+                    placeholder="Enter the Name of Player 6"
+                    name="player6" 
+                    value="<%= tournament.player6 %>"
+                    required>
+                    <label for="match3WinnerSelect">Match 3 Winner</label>
+                <select class="form-control" id="match3WinnerSelect" name="winner3" value="<%= tournament.winner3 %>" required>
+                    <option>5</option>
+                    <option>6</option>
+                  </select>
+                </fieldset>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Match 4</legend>
+                    
+                    <input type="text"
+                    class="form-control"
+                    id="player7TextField"
+                    placeholder="Enter the Name of Player 7"
+                    name="player7" 
+                    value="<%= tournament.player7 %>"
+                    required>
+                    <input type="text"
+                    class="form-control"
+                    id="player8TextField"
+                    placeholder="Enter the Name of Player 8"
+                    name="player8" 
+                    value="<%= tournament.player8 %>"
+                    required>
+                    <label for="match4WinnerSelect">Match 4 Winner</label>
+                <select class="form-control" id="match4WinnerSelect" name="winner4" value="<%= tournament.winner4 %>" required>
+                    <option>7</option>
+                    <option>8</option>
+                  </select>
+                </fieldset>
+                </div>
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Semi-final 1</legend>
+                    
+                    <input type="text"
+                    class="form-control"
+                    id="semi1Player1TextField"
+                    placeholder="Enter the Name of First Semi-Finalist"
+                    name="semiplayer1" 
+                    value="<%= tournament.semiplayer1 %>"
+                    >
+                    <input type="text"
+                    class="form-control"
+                    id="semi1player2TextField"
+                    placeholder="Enter the Name of Second Semi-Finalist"
+                    name="semiplayer2" 
+                    value="<%= tournament.semiplayer2 %>"
+                    >
+                    <label for="sf1WinnerSelect">Semi-final 1 Winner</label>
+                <select class="form-control" id="sf1WinnerSelect" name="winnersf1" value="<%= tournament.winnersf1 %>">
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Semi-final2</legend>
+                    
+                    <input type="text"
+                    class="form-control"
+                    id="semi2Player1TextField"
+                    placeholder="Enter the Name of Third Semi-Finalist"
+                    name="semiplayer3" 
+                    value="<%= tournament.semiplayer3 %>"
+                    >
+                    <input type="text"
+                    class="form-control"
+                    id="semi2player2TextField"
+                    placeholder="Enter the Name of Fourth Semi-Finalist"
+                    name="semiplayer4" 
+                    value="<%= tournament.semiplayer4 %>"
+                    >
+                
+                    <label for="sf2WinnerSelect">Semi-final 2 Winner</label>
+                <select class="form-control" id="sf2WinnerSelect" name="winnersf2" value="<%= tournament.winnersf2 %>">
+                    <option>3</option>
+                    <option>4</option>
+                  </select>
+                </fieldset>
+                </div>
+
+                <div class="form-group">
+                    <fieldset>
+                        <legend>Final</legend>
+                    
+                    <input type="text"
+                    class="form-control"
+                    id="finalPlayer1TextField"
+                    placeholder="Enter the Name of First Finalist"
+                    name="finalplayer1" 
+                    value="<%= tournament.finalplayer1 %>"
+                    >
+                    <input type="text"
+                    class="form-control"
+                    id="finalPlayer2TextField"
+                    placeholder="Enter the Name of Second Finalist"
+                    name="finalplayer2" 
+                    value="<%= tournament.finalplayer2 %>"
+                    >
+                
+                    <label for="finalWinnerSelect">Champion</label>
+                <select class="form-control" id="finalWinnerSelect" name="winnerfinal" value="<%= tournament.winnerfinal %>">
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </fieldset>
                 </div>
 
                 <br/>
