@@ -21,7 +21,7 @@ app.use(session({
 
 let indexRouter = require('../routes/index');
 let usersRouter = require('../routes/users');
-let tournamentsRouter = require('../routes/tournament');
+let tournamentsRouter = require('../routes/tournaments');
 
 // view engine setup
 app.set('views', path.join(__dirname, '../views'));

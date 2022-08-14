@@ -1,5 +1,5 @@
 // create a reference to the model
-let TournamentModel = require('../models/tournament');
+let TournamentModel = require('../models/tournaments');
 
 // Gets all tournaments from the Database and renders the page to list them all.
 module.exports.tournamentList = function(req, res, next) {  
@@ -101,7 +101,7 @@ module.exports.processAddPage = (req, res, next) => {
             finalplayer2: req.body.finalplayer2,
             winnerfinal: req.body.winnerfinal,
         },
-        owner: (req.body.owner == null || req.body.owner == "")? req.payload.id : req.body.owner
+        owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
     });
 //shows error and redirects user to tournament list if there is no error
     TournamentModel.create(newTournament, (err, tournament)=>{
@@ -111,7 +111,7 @@ module.exports.processAddPage = (req, res, next) => {
     }
     else{
         console.log(tournament);
-        res.redirect('/tournament/list');
+        res.redirect('/tournaments/list');
     }
 });
 
@@ -185,7 +185,7 @@ module.exports.processEditPage = (req, res, next) => {
             finalplayer2: req.body.finalplayer2,
             winnerfinal: req.body.winnerfinal,
         },
-        owner: (req.body.owner == null || req.body.owner == "")? req.payload.id : req.body.owner
+        owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
     });
 
     TournamentModel.updateOne({_id: id}, updatedTournament, (err)=>{

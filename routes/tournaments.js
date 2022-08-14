@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-let tournamentController = require('../controllers/tournament');
+let tournamentController = require('../controllers/tournaments');
 
 //Connect to tournaments model
 
-let Tournament = require('../models/tournament');
+let Tournament = require('../models/tournaments');
 
 // Helper function for guard purposes
 function requireAuth(req, res, next)
