@@ -3,7 +3,7 @@
 <!-- Content for the Details page -->
 <div class="container">
     <div class="row">
-        <div class="offset-md-3 col-md-6">
+        <div class="column">
             <h1><%= title %></h1>
 
                 <div class="form-group">
@@ -18,13 +18,94 @@
                     <label for="statusTextField">Status:</label>
                     <strong><%= tournament.status %></strong>                    
                 </div>
+                </div>
+                </div>
+                <hr>
+                <div class="row>">
                 <div class="form-group">
-                    <label>Match 1</label>
-                    <strong><%= tournament.match1.player1 %></strong> 
-                    <strong><%= tournament.match1.player1 %></strong> 
-                    <label>Match 1 Winner</label>
-                    <strong><%= tournament.match1.winner1 %></strong> 
-                                      
+                    <label><strong>Match 1</strong></label><br>
+                    <text>Player 1</text>
+                    <strong><%= tournament.match1.player1 %></strong>
+                    <text>vs</text> 
+                    <text>Player 2</text>
+                    <strong><%= tournament.match1.player2 %></strong> 
+                    <br>
+                    <label>Match 1 Winner: Player </label>
+                    <strong><%= tournament.match1.winner1 %></strong>
+                    <hr>              
+                </div>
+                <div class="form-group">
+                    <label><strong>Match 2</strong></label><br>
+                    <text>Player 3</text>
+                    <strong><%= tournament.match2.player3 %></strong>
+                    <text>vs</text> 
+                    <text>Player 4</text>
+                    <strong><%= tournament.match2.player4 %></strong> 
+                    <br>
+                    <label>Match 2 Winner: Player </label>
+                    <strong><%= tournament.match2.winner2 %></strong>
+                    <hr>              
+                </div>
+                <div class="form-group">
+                    <label><strong>Match 3</strong></label><br>
+                    <text>Player 5</text>
+                    <strong><%= tournament.match3.player5 %></strong>
+                    <text>vs</text> 
+                    <text>Player 6</text>
+                    <strong><%= tournament.match3.player6 %></strong> 
+                    <br>
+                    <label>Match 3 Winner: Player </label>
+                    <strong><%= tournament.match3.winner3 %></strong>
+                    <hr>              
+                </div>
+                <div class="form-group">
+                    <label><strong>Match 4</strong></label><br>
+                    <text>Player 7</text>
+                    <strong><%= tournament.match4.player7 %></strong>
+                    <text>vs</text> 
+                    <text>Player 8</text>
+                    <strong><%= tournament.match4.player8 %></strong> 
+                    <br>
+                    <label>Match 4 Winner: Player </label>
+                    <strong><%= tournament.match4.winner4 %></strong>
+                    <hr>              
+                </div>
+                <div class="form-group">
+                    <label><strong>Semi-Final 1</strong></label><br>
+                    <text>Semifinalist 1</text>
+                    <strong><%= tournament.semifinal1.semiplayer1 %></strong>
+                    <text>vs</text> 
+                    <text>Semifinalist 2</text>
+                    <strong><%= tournament.semifinal1.semiplayer2 %></strong> 
+                    <br>
+                    <label>Semi-Final 1 Winner: Player </label>
+                    <strong><%= tournament.semifinal1.winnersf1 %></strong>
+                    <hr>              
+                </div>
+                <div class="form-group">
+                    <label><strong>Semi-Final 2</strong></label><br>
+                    <text>Semi-Finalist 3</text>
+                    <strong><%= tournament.semifinal2.semiplayer3 %></strong>
+                    <text>vs</text> 
+                    <text>Semi-Finalist 4</text>
+                    <strong><%= tournament.semifinal2.semiplayer4 %></strong> 
+                    <br>
+                    <label>Semi-Final 2 Winner: Player </label>
+                    <strong><%= tournament.semifinal2.winnersf2 %></strong>
+                    <hr>              
+                </div>
+                <div class="form-group">
+                    <label><strong>Final</strong></label><br>
+                    <text>Finalist 1</text>
+                    <strong><%= tournament.final.finalplayer1 %></strong>
+                    <text>vs</text> 
+                    <text>Finalist 2</text>
+                    <strong><%= tournament.final.finalplayer2 %></strong> 
+                    <br>
+                    <label>Champion: Player </label>
+                    <strong><%= tournament.final.winnerfinal %></strong>
+                    <hr>              
+                </div>
                 </div>
                 
                 <br />
@@ -34,10 +115,12 @@
                     Cancel
                 </a>
 
-            </form>
+            
         </div>
+       
 
     </div>
+</form>
 </div>
 
 <%- include ../partials/footer.ejs %>
