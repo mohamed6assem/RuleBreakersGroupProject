@@ -60,7 +60,7 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
 
     let newTournament = TournamentModel({
-        //_id: req.body.id,
+        _id: req.body.id,
         name: req.body.name,
         description: req.body.description,
         status: req.body.status,
@@ -146,6 +146,7 @@ module.exports.processEditPage = (req, res, next) => {
     let id = req.params.id;
 
     let updatedTournament = TournamentModel({
+        _id: req.body.id,
         name: req.body.name,
         description: req.body.description,
         status: req.body.status,
