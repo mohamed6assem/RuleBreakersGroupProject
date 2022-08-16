@@ -86,7 +86,6 @@ module.exports.processAddPage = (req, res, next) => {
         },
         
         semifinal1: {
-            //semiplayer1: (req.body.winner1=1 ? req.body.player1 : req.body.player2),
             semiplayer1: req.body.semiplayer1,
             semiplayer2: req.body.semiplayer2,
             winnersf1: req.body.winnersf1,
@@ -144,6 +143,7 @@ module.exports.displayEditPage = (req, res, next) => {
 module.exports.processEditPage = (req, res, next) => {
     
     let id = req.params.id;
+    
 
     let updatedTournament = TournamentModel({
         _id: req.body.id,

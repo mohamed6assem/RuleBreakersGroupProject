@@ -20,6 +20,10 @@ function requireAuth(req, res, next)
     next();     
 
 }
+// function checkIfCreator(req, res, next)
+// {
+//     if(req.session.passport.user.{})
+// }
 
 /* GET list of items */
 // absence of requireAuth enables people who aren't signed in to access list of tournaments
