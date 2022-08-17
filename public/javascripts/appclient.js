@@ -41,8 +41,8 @@ function onChange() {
 }
 
 
-// if(getTitle == "Add a New Tournament" || getTitle == "Edit Tournament" )
-// {
+//if(getTitle == "Add a New Tournament" || getTitle == "Edit Tournament" ){//
+    //const 
 //     const submitButton = document.querySelector('button[type=submit]');
 
 //     submitButton.addEventListener('click', onClick);
@@ -96,6 +96,6 @@ function onChange() {
     //              status[i].value == <%= tournament.status %>;
     //         }
     //     }
-    //}
+//}
 
     

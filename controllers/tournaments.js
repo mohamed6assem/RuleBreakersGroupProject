@@ -103,7 +103,11 @@ module.exports.processAddPage = (req, res, next) => {
         },
         status:(req.body.finalplayer1 != null && req.body.finalplayer2 != null 
             && req.body.semiplayer1 != null && req.body.semiplayer2 != null
-            && req.body.semiplayer3 != null && req.body.semiplayer4 != null)? "Complete" : req.body.status,
+            && req.body.semiplayer3 != null && req.body.semiplayer4 != null 
+            && req.body.finalplayer1 != "" && req.body.finalplayer2 != "" 
+            && req.body.semiplayer1 != "" && req.body.semiplayer2 != ""
+            && req.body.semiplayer3 != "" && req.body.semiplayer4 != ""
+             && req.body.status == "In progress")? "Complete" : req.body.status,
 
         owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
     });
@@ -153,7 +157,7 @@ module.exports.processEditPage = (req, res, next) => {
         _id: req.body.id,
         name: req.body.name,
         description: req.body.description,
-        status: req.body.status,
+        //status: req.body.status,
         match1: {
             player1: req.body.player1,
             player2: req.body.player2,
@@ -193,8 +197,11 @@ module.exports.processEditPage = (req, res, next) => {
         },
         status:(req.body.finalplayer1 != null && req.body.finalplayer2 != null 
             && req.body.semiplayer1 != null && req.body.semiplayer2 != null
-            && req.body.semiplayer3 != null && req.body.semiplayer4 != null)? "Complete" : req.body.status,
-
+            && req.body.semiplayer3 != null && req.body.semiplayer4 != null 
+            && req.body.finalplayer1 != "" && req.body.finalplayer2 != "" 
+            && req.body.semiplayer1 != "" && req.body.semiplayer2 != ""
+            && req.body.semiplayer3 != "" && req.body.semiplayer4 != ""
+             && req.body.status == "In progress")? "Complete" : req.body.status,
         owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
     });
 
