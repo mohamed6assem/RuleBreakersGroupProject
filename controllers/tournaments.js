@@ -63,7 +63,7 @@ module.exports.processAddPage = (req, res, next) => {
         _id: req.body.id,
         name: req.body.name,
         description: req.body.description,
-        status: req.body.status,
+        //status: req.body.status,
         match1: {
             player1: req.body.player1,
             player2: req.body.player2,
@@ -101,6 +101,10 @@ module.exports.processAddPage = (req, res, next) => {
             finalplayer2: req.body.finalplayer2,
             winnerfinal: req.body.winnerfinal,
         },
+        status:(req.body.finalplayer1 != null && req.body.finalplayer2 != null 
+            && req.body.semiplayer1 != null && req.body.semiplayer2 != null
+            && req.body.semiplayer3 != null && req.body.semiplayer4 != null)? "Complete" : req.body.status,
+
         owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
     });
 //shows error and redirects user to tournament list if there is no error
@@ -187,6 +191,10 @@ module.exports.processEditPage = (req, res, next) => {
             finalplayer2: req.body.finalplayer2,
             winnerfinal: req.body.winnerfinal,
         },
+        status:(req.body.finalplayer1 != null && req.body.finalplayer2 != null 
+            && req.body.semiplayer1 != null && req.body.semiplayer2 != null
+            && req.body.semiplayer3 != null && req.body.semiplayer4 != null)? "Complete" : req.body.status,
+
         owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
     });
 
