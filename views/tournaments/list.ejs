@@ -6,6 +6,10 @@
         <h1><%= title %></h1>
         <br>
         <div>
+            <input type="hidden"
+                    name="user"
+                    value = "<%= userName %>"
+                    >
    
             <a href="/Tournaments/add" class="btn btn-primary align-self-end" role="button">
                 <i class="fas fa-plus-circle"></i> 
@@ -21,6 +25,7 @@
                     <th class="text-center">Status</th>
                     <th class="text-center">Description</th>
                     <th class="text-center" colspan="3">Actions</th>
+                    <!-- <th class="text-center" hidden colspan="1">Creator</th> -->
                 </tr>
 
                 <!-- Repeatable Template Row -->
@@ -34,16 +39,28 @@
                             <a href="/Tournaments/details/<%= TournamentsList[i]._id %>" class="btn btn-success btn-sm"> 
                             <i class="fas fa-info"></i> </a>
                         </td>
+                        <% if(userName == TournamentsList[i].creator) { %>
                         <td class="text-center">
                            
-                            <a href="/Tournaments/edit/<%=TournamentsList[i]._id %> " class="btn btn-primary btn-sm">
+                            <a href="/Tournaments/edit/<%=TournamentsList[i]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i></a>
                         </td>
                         <td class="text-center">
-                          
                             <a href="/Tournaments/delete/<%=TournamentsList[i]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i></a>
                         </td>
+                        <% } else { %>
+                            <td class="text-center" hidden>
+                           
+                                <a href="/Tournaments/edit/<%=TournamentsList[i]._id %>" class="btn btn-primary btn-sm">
+                                <i class="fas fa-pencil-alt"></i></a>
+                            </td>
+                            <td class="text-center" hidden>
+                                <a href="/Tournaments/delete/<%=TournamentsList[i]._id %>" class="btn btn-danger btn-sm">
+                                <i class="fas fa-trash-alt"></i></a>
+                            </td>
+                            <% } %> 
+                        <!-- <td class="text-center" hidden><= TournamentsList[i].creator %></td> -->
                     </tr>
                 <% } %>
             </table>

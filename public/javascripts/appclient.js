@@ -3,7 +3,8 @@
 // StudentId: 301163010
 // Date: Jun 25, 2022
 
-const { tournamentList } = require("../../controllers/tournaments");
+const { tournamentList } = require("../../controllers/tournament");
+
 
 console.log('app script is working.');
 
@@ -41,7 +42,37 @@ function onChange() {
 }
 
 
-//if(getTitle == "Add a New Tournament" || getTitle == "Edit Tournament" ){//
+if(getTitle == "Add a New Tournament" || getTitle == "Edit Tournament" ){
+    //let btnAddSemiplayer1 = document.querySelector('button[name=btnFirstWinner]');
+    //let valueSemiplayer1 = document.querySelector('select[name=winner1]');
+    // let btnAddSemiplayer2 = document.querySelector('button[name=btnSecondWinner]');
+    // let valueSemiplayer2 = document.querySelector('select[name=winner2]');
+    // let btnAddSemiplayer3 = document.querySelector('button[name=btnThirdWinner]');
+    // let valueSemiplayer3 = document.querySelector('select[name=winner3]');
+    // let btnAddSemiplayer4 = document.querySelector('button[name=btnFourthWinner]');
+    // let valueSemiplayer4 = document.querySelector('select[name=winner4]');
+    const selectSemi1Player1 = document.getElementByName('winnersf1');
+    const match1WinnerSelect = document.getElementByName('winner1');
+    match1WinnerSelect.addEventListener('change', onChangeWinner1);
+ } 
+ function onChangeWinner1(){
+    const selectSemi1Player1 = document.getElementByName('winnersf1');
+    const match1WinnerSelect = document.getElementByName('winner1');
+        let optionSemiPlayer1 = document.createElement('option');
+        optionSemiPlayer1.value = match1WinnerSelect.value;
+        optionSemiPlayer1.text = match1WinnerSelect.text;
+        selectSemi1Player1.add(optionSemiPlayer1); 
+    }
+
+    // let selectSemi1Player1 = document.querySelector('select[name=winnersf1]');
+    // btnAddSemiplayer1.addEventListener('click', () =>{
+    //     let optionSemiPlayer1 = document.createElement('option');
+    //     optionSemiPlayer1.value = valueSemiplayer1.value;
+    //     optionSemiPlayer1.text = valueSemiplayer1.value;
+    //     selectSemi1Player1.add(optionSemiPlayer1); 
+    // })
+
+
     //const 
 //     const submitButton = document.querySelector('button[type=submit]');
 

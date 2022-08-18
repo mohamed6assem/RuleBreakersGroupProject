@@ -44,6 +44,7 @@ let tournamentModel = mongoose.Schema(
             finalplayer2: String,
             winnerfinal: Number
         },
+        creator: String,
 
          owner: {
              type: mongoose.Schema.Types.ObjectId,

@@ -1,5 +1,6 @@
 // create a reference to the model
 let TournamentModel = require('../models/tournaments');
+const user = require('../models/user');
 
 // Gets all tournaments from the Database and renders the page to list them all.
 module.exports.tournamentList = function(req, res, next) {  
@@ -107,9 +108,14 @@ module.exports.processAddPage = (req, res, next) => {
             && req.body.finalplayer1 != "" && req.body.finalplayer2 != "" 
             && req.body.semiplayer1 != "" && req.body.semiplayer2 != ""
             && req.body.semiplayer3 != "" && req.body.semiplayer4 != ""
-             && req.body.status == "In progress")? "Complete" : req.body.status,
+            && req.body.status == "In progress")? "Complete" : req.body.status,
 
-        owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
+        creator: req.user.username,
+
+
+        owner: req.user._id
+        //owner: req.body.user
+        //owner: (req.body.user == null || req.body.user == "")? req.payload?.id : req.body.user
     });
 //shows error and redirects user to tournament list if there is no error
     TournamentModel.create(newTournament, (err, tournament)=>{
@@ -129,6 +135,8 @@ module.exports.processAddPage = (req, res, next) => {
 module.exports.displayEditPage = (req, res, next) => {
     
     let id = req.params.id;
+    let owner = req.user._id;
+
 
     TournamentModel.findById(id, (err, tournamentToEdit) => {
         if(err){
@@ -202,7 +210,10 @@ module.exports.processEditPage = (req, res, next) => {
             && req.body.semiplayer1 != "" && req.body.semiplayer2 != ""
             && req.body.semiplayer3 != "" && req.body.semiplayer4 != ""
              && req.body.status == "In progress")? "Complete" : req.body.status,
-        owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
+        //owner: (req.body.owner == null || req.body.owner == "")? req.payload?.id : req.body.owner
+        //owner: req.body.user
+        creator: req.user.username,
+        owner: req.user._id
     });
 
     TournamentModel.updateOne({_id: id}, updatedTournament, (err)=>{

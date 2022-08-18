@@ -10,11 +10,11 @@
                 <div class="form-group">
                     <input type="hidden"
                         name="id"
-                        value="<%= tournament._id %>"
+                        value="<%= tournament._id %>"  
                     >
                     <input type="hidden"
                     name="user"
-                    value="<%= tournament.owner %>"
+                    value = "<%= userName %>"
                     >
                     <label for="tournamentNameTextField">Name</label>
                     <input type="text" class="form-control"
@@ -76,9 +76,10 @@
                     required>
                 <label for="match1WinnerSelect">Match 1 Winner</label>
                 <select class="form-control" id="match1WinnerSelect" name="winner1" value="<%= tournament.match1.winner1 %>" required>
-                    <option>1</option>
-                    <option>2</option>
+                    <option id="match1optn1" value="1">Player 1</option>
+                    <option id="match1optn2" value="2">Player 2</option>
                   </select>
+                  <button name="btnFirstWinner" type="button">Confirm First Semi-Finalist</button>
                 </fieldset>
                 </div>
                 <div class="form-group">
@@ -101,9 +102,10 @@
                     required>
                     <label for="match2WinnerSelect">Match 2 Winner</label>
                 <select class="form-control" id="match2WinnerSelect" name="winner2" value="<%= tournament.match2.winner2 %>" required>
-                    <option>3</option>
-                    <option>4</option>
+                    <option id="match2optn3" value="3">Player 3</option>
+                    <option id="match2optn4" value="4">Player 4</option>
                   </select>
+                  <button name="btnSecondWinner">Confirm Second Semi-Finalist</button>
                 </fieldset>
                 </div>
                 <div class="form-group">
@@ -126,9 +128,10 @@
                     required>
                     <label for="match3WinnerSelect">Match 3 Winner</label>
                 <select class="form-control" id="match3WinnerSelect" name="winner3" value="<%= tournament.match3.winner3 %>" required>
-                    <option>5</option>
-                    <option>6</option>
+                    <option id="match3optn5" value="5">Player 5</option>
+                    <option id="match3optn6" value="6">Player 6</option>
                   </select>
+                  <button name="btnThirdWinner">Confirm Third Semi-Finalist</button>
                 </fieldset>
                 </div>
                 <div class="form-group">
@@ -151,9 +154,10 @@
                     required>
                     <label for="match4WinnerSelect">Match 4 Winner</label>
                 <select class="form-control" id="match4WinnerSelect" name="winner4" value="<%= tournament.match4.winner4 %>" required>
-                    <option>7</option>
-                    <option>8</option>
+                    <option id="match4optn7" value="7">Player 7</option>
+                    <option id="match4optn8" value="8">Player 8</option>
                   </select>
+                  <button name="btnFourthWinner">Confirm Fourth Semi-Finalist</button>
                 </fieldset>
                 </div>
                 <div class="form-group">
@@ -177,7 +181,7 @@
                     <label for="sf1WinnerSelect">Semi-final 1 Winner</label>
                 <select class="form-control" id="sf1WinnerSelect" name="winnersf1" value="<%= tournament.semifinal1.winnersf1 %>">
                     <option>1</option>
-                    <option>2</option>
+                    <!-- <option>2</option> -->
                   </select>
                 </fieldset>
                 </div>
